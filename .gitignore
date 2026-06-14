@@ -1,0 +1,28 @@
+node_modules/
+dist/
+
+.DS_Store
+*.log
+
+# Local job-workbench material, not part of the public portfolio site.
+.agents/
+profile/
+jobs/
+outputs/
+templates/
+skills-lock.json
+content_review.md
+style_direction.md
+AGENTS.md
+
+# Original PDFs are retained locally; the public site uses exported page images.
+assets/pdf/
+
+# Earlier exploration artifacts.
+demo-a.html
+demo-b.html
+demo-b-old.html
+demo-home.css
+demo-home.js
+design-previews/
+scripts/

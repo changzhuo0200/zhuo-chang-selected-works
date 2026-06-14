@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>卓畅 | 作品集</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="ambient" aria-hidden="true">
+      <div class="portfolio-colorbends" id="colorbendsBackground"></div>
+      <span class="liquid liquid-a"></span>
+      <span class="liquid liquid-b"></span>
+      <span class="liquid liquid-c"></span>
+      <span class="silver-mist"></span>
+      <span class="cursor-glow"></span>
+    </div>
+
+    <main class="app-shell">
+      <section class="home-view view is-active" id="home" aria-label="首页">
+        <div class="home-mark">
+          <span>卓畅</span>
+          <i></i>
+          <span>ZHUO Chang</span>
+        </div>
+
+        <div class="home-stage">
+          <section class="home-copy" aria-labelledby="homeStatement">
+            <div class="editorial-line" aria-hidden="true"></div>
+            <p class="micro-label shiny-text">ZHUO CHANG · SELECTED WORKS</p>
+            <h1 class="home-statement split-text hero-title" id="homeStatement">
+              <span class="title-line line">在<span class="gradient-key no-break">研究与实践</span>之间，</span>
+              <span class="title-line line">寻找<span class="no-break">人与内容</span></span>
+              <span class="title-line line">的<span class="gradient-key no-break">真实连接</span>。</span>
+            </h1>
+          </section>
+
+          <nav class="home-index" aria-label="项目入口">
+            <button class="home-project" type="button" data-project="portfolio">
+              <span class="project-no">01</span>
+              <strong>内容落地</strong>
+              <em>组织内容 · 内容运营</em>
+            </button>
+            <button class="home-project" type="button" data-project="research">
+              <span class="project-no">02</span>
+              <strong>玩家田野</strong>
+              <em>研究项目 · 个体叙事</em>
+            </button>
+            <button class="home-project" type="button" data-project="game-culture">
+              <span class="project-no">03</span>
+              <strong>文化转译</strong>
+              <em>中式审美 · 游戏文化</em>
+            </button>
+          </nav>
+        </div>
+      </section>
+
+      <section class="project-view view" id="projectView" aria-live="polite">
+        <aside class="project-rail" aria-label="项目切换">
+          <button class="rail-home" type="button" data-home>返回首页</button>
+          <div class="rail-list" id="railList"></div>
+        </aside>
+
+        <article class="project-page" id="projectPage"></article>
+      </section>
+    </main>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="页面预览" hidden>
+      <button class="lightbox-close" type="button" aria-label="关闭预览">×</button>
+      <button class="lightbox-nav lightbox-prev" type="button" data-lightbox-step="-1" aria-label="上一页">Prev</button>
+      <img alt="">
+      <button class="lightbox-nav lightbox-next" type="button" data-lightbox-step="1" aria-label="下一页">Next</button>
+      <p id="lightboxCaption"></p>
+    </div>
+
+    <script type="module" src="./script.js"></script>
+    <script type="module" src="./src/portfolio-background.jsx"></script>
+  </body>
+</html>
