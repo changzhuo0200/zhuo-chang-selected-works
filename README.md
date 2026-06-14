@@ -70,10 +70,16 @@ assets/images/game-culture-01.jpg
 
 ## GitHub Pages 部署
 
+线上地址通常是：
+
+```text
+https://changzhuo0200.github.io/zhuo-chang-selected-works/
+```
+
 1. 将项目推送到 GitHub 仓库。
 2. 在本地运行 `npm run build`，确认构建通过。
-3. GitHub Pages 推荐使用 Actions 部署 Vite 构建产物。
-4. 构建命令为 `npm run build`，发布目录为 `dist`。
+3. 当前仓库使用 `gh-pages` 分支发布构建产物。
+4. 如果 GitHub Pages 尚未自动启用，在仓库 `Settings` -> `Pages` 中选择 `Deploy from a branch`，分支选择 `gh-pages`，目录选择 `/root`。
 
 ## Netlify 部署
 
@@ -82,6 +88,13 @@ Netlify 推荐设置：
 ```text
 Build command: npm run build
 Publish directory: dist
+```
+
+如果连接 GitHub 仓库，选择：
+
+```text
+Repository: changzhuo0200/zhuo-chang-selected-works
+Branch: main
 ```
 
 部署步骤：
