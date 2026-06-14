@@ -67,6 +67,7 @@ const lightboxCaption = lightbox.querySelector("p");
 let activeProjectKey = projects[0].key;
 let activePageIndex = 0;
 let lightboxOpen = false;
+let viewerSwapToken = 0;
 
 function pad(num) {
   return String(num).padStart(2, "0");
@@ -204,14 +205,14 @@ function updateViewer(pageIndex, direction = 1) {
   const viewer = projectPage.querySelector(".viewer");
   const preview = projectPage.querySelector(".main-preview");
   if (!viewer || !preview) return;
+  const data = currentImageData();
+  const image = preview.querySelector("img");
+  const previewCount = preview.querySelector(".preview-count");
+  const viewerCount = viewer.querySelector(".viewer-count");
+  const token = ++viewerSwapToken;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  preview.classList.add("is-swapping");
-  window.setTimeout(() => {
-    const data = currentImageData();
-    const image = preview.querySelector("img");
-    const previewCount = preview.querySelector(".preview-count");
-    const viewerCount = viewer.querySelector(".viewer-count");
-
+  const applyImage = () => {
     image.src = data.src;
     image.alt = `${data.project.title} 第 ${data.displayIndex} 页`;
     previewCount.textContent = `${pad(data.displayIndex)} / ${data.total}`;
@@ -221,17 +222,48 @@ function updateViewer(pageIndex, direction = 1) {
       thumb.classList.toggle("is-active", index === activePageIndex);
     });
 
-    preview.animate(
-      [
-        { opacity: 0, transform: `translateX(${direction * 18}px)` },
-        { opacity: 1, transform: "translateX(0)" }
-      ],
-      { duration: 320, easing: "cubic-bezier(0.16, 1, 0.3, 1)" }
-    );
-    preview.classList.remove("is-swapping");
-
     if (lightboxOpen) updateLightboxImage(direction);
-  }, 150);
+  };
+
+  if (reduceMotion) {
+    applyImage();
+    return;
+  }
+
+  const nextImage = new Image();
+  const imageReady = new Promise((resolve) => {
+    const finish = () => resolve();
+    nextImage.onload = finish;
+    nextImage.onerror = finish;
+    nextImage.src = data.src;
+    if (nextImage.complete) finish();
+    window.setTimeout(finish, 240);
+  });
+
+  imageReady.then(() => {
+    if (token !== viewerSwapToken) return;
+    preview.classList.add("is-swapping");
+    const out = preview.animate(
+      [
+        { opacity: 1, transform: "translate3d(0, 0, 0) scale(1)" },
+        { opacity: 0.16, transform: `translate3d(${direction * -12}px, 0, 0) scale(0.997)` }
+      ],
+      { duration: 170, easing: "cubic-bezier(0.22, 0.61, 0.36, 1)", fill: "forwards" }
+    );
+
+    out.finished.finally(() => {
+      if (token !== viewerSwapToken) return;
+      applyImage();
+      preview.animate(
+        [
+          { opacity: 0.12, transform: `translate3d(${direction * 16}px, 0, 0) scale(0.997)` },
+          { opacity: 1, transform: "translate3d(0, 0, 0) scale(1)" }
+        ],
+        { duration: 320, easing: "cubic-bezier(0.16, 1, 0.3, 1)" }
+      );
+      preview.classList.remove("is-swapping");
+    });
+  });
 }
 
 function showHome() {
