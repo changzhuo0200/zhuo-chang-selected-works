@@ -1,0 +1,1 @@
+.color-bends{pointer-events:auto;width:100%;height:100%;position:absolute;inset:0;overflow:hidden}.color-bends canvas{width:100%;height:100%;display:block}.color-bends.is-muted{opacity:.46}.color-bends:after{content:"";pointer-events:none;background:linear-gradient(90deg,#0b24352e,#0000 32%,#0b24351f),radial-gradient(at 18%,#0a1f3047,#0000 54%);position:absolute;inset:0}

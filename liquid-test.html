@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LiquidEther Three.js Test</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+        overflow: hidden;
+        background: linear-gradient(145deg, #163f61 0%, #4b93b6 62%, #d8edf5 145%);
+        color: #f6fbff;
+        font-family: -apple-system, BlinkMacSystemFont, "Avenir Next", "Helvetica Neue", "PingFang SC", sans-serif;
+      }
+
+      .stage {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      #liquidEther {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      .label {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        gap: 18px;
+        width: min(720px, 82vw);
+        padding: 10vh 0 0 8vw;
+        pointer-events: none;
+      }
+
+      .label p {
+        margin: 0;
+        color: rgba(238, 250, 255, 0.72);
+        font-size: 12px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .label h1 {
+        margin: 0;
+        max-width: 620px;
+        font-family: "Songti SC", "STSong", serif;
+        font-size: clamp(48px, 7vw, 94px);
+        font-weight: 350;
+        letter-spacing: 0.05em;
+        line-height: 1.35;
+        text-shadow: 0 0 22px rgba(225, 248, 255, 0.18);
+      }
+    </style>
+    <script type="module" crossorigin src="./assets/liquid-CEAYxs0T.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/three.module-DTwpF38d.js">
+  </head>
+  <body>
+    <main class="stage">
+      <canvas id="liquidEther"></canvas>
+      <section class="label">
+        <p>LiquidEther · Three.js local module test</p>
+        <h1>流体背景验证页</h1>
+      </section>
+    </main>
+
+  </body>
+</html>
