@@ -113,9 +113,17 @@ h1 em,h2 em,.accent{color:var(--accent);font-style:normal}
   gap:32px;
   margin-top:30px;
 }
+.cover-page .grid{
+  grid-template-columns:1.12fr .88fr;
+  gap:28px;
+  margin-top:24px;
+}
 .panel{
   border-top:1px solid var(--hair);
   padding-top:18px;
+}
+.cover-page .panel{
+  padding-top:14px;
 }
 .label{
   margin-bottom:14px;
@@ -131,6 +139,9 @@ h1 em,h2 em,.accent{color:var(--accent);font-style:normal}
   line-height:1.22;
   font-weight:800;
 }
+.cover-page .panel h2{
+  font-size:22px;
+}
 .panel p,.copy{
   margin-top:10px;
   color:#443b34;
@@ -139,6 +150,21 @@ h1 em,h2 em,.accent{color:var(--accent);font-style:normal}
   letter-spacing:0;
   text-align:justify;
   text-justify:inter-ideograph;
+}
+.title-reason{
+  margin-top:14px;
+  padding:12px 14px;
+  border:1px solid var(--hair-soft);
+  background:rgba(255,255,255,.22);
+  color:#3b342e;
+  font-size:11.8px;
+  line-height:1.42;
+  letter-spacing:0;
+  text-align:justify;
+  text-justify:inter-ideograph;
+}
+.title-reason p + p{
+  margin-top:5px;
 }
 .demo-link{
   display:block;
@@ -194,10 +220,26 @@ h1 em,h2 em,.accent{color:var(--accent);font-style:normal}
   border:1px solid var(--hair);
   background:rgba(255,255,255,.28);
 }
+.cover-page .script{
+  margin-top:14px;
+  padding:12px 16px 14px;
+}
 .script h2{
   margin-bottom:10px;
   font-family:var(--serif);
   font-size:27px;
+}
+.script h2 small{
+  margin-left:10px;
+  color:var(--muted);
+  font-family:var(--sans);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.08em;
+}
+.cover-page .script h2{
+  margin-bottom:7px;
+  font-size:22px;
 }
 .script p{
   color:#302923;
@@ -207,8 +249,15 @@ h1 em,h2 em,.accent{color:var(--accent);font-style:normal}
   text-align:justify;
   text-justify:inter-ideograph;
 }
+.cover-page .script p{
+  font-size:11.4px;
+  line-height:1.42;
+}
 .script p + p{
   margin-top:8px;
+}
+.cover-page .script p + p{
+  margin-top:4px;
 }
 .flow{
   display:grid;
@@ -229,6 +278,23 @@ h1 em,h2 em,.accent{color:var(--accent);font-style:normal}
   font-size:16px;
   font-weight:700;
   text-align:center;
+}
+.cover-page .flow{
+  display:flex;
+  gap:8px;
+  margin-top:14px;
+  border:0;
+}
+.cover-page .flow span{
+  min-height:0;
+  padding:6px 12px;
+  border:1px solid var(--hair-soft);
+  border-radius:999px;
+  background:rgba(255,255,255,.22);
+  color:#3d352f;
+  font-family:var(--sans);
+  font-size:12px;
+  font-weight:900;
 }
 .two-col{
   display:grid;
@@ -373,7 +439,7 @@ h1 em,h2 em,.accent{color:var(--accent);font-style:normal}
 </style>
 </head>
 <body>
-  <section class="page">
+  <section class="page cover-page">
     <header class="top">
       <div class="masthead">REDebuilt OC · PREWORK</div>
       <div class="folio"><b>01</b> / 02</div>
@@ -390,7 +456,6 @@ h1 em,h2 em,.accent{color:var(--accent);font-style:normal}
         <div class="meta-list">
           <div><b>主标题</b><span>《小红书的赞，最近有点忙》</span></div>
           <div><b>备选</b><span>《不是所有喜欢，都长成一个红心》<br>《谁点到过？小红书隐藏赞图鉴征集中》</span></div>
-          <div><b>更小红书</b><span>标题有拟人感和聊天感，能自然引出“谁点到了”“怎么触发”“还有没有别的隐藏赞”。</span></div>
         </div>
       </div>
       <div class="panel">
@@ -404,12 +469,20 @@ h1 em,h2 em,.accent{color:var(--accent);font-style:normal}
       </div>
     </div>
 
+    <div class="title-reason">
+      <p>选择《小红书的赞，最近有点忙》，是从大家正在刷到的一个小发现切入：怎么这个赞突然变了（变成了世界杯的足球）？谁点到了？还能不能再点一次？“赞，最近有点忙”有一点拟人感，也有一点活人感，不像在讲一个按钮更新，更像「是小红书人啊」和大家聊天的语气。</p>
+      <p>它也不只绑定世界杯一个案例，可以继续承接足球、木棉花、小花、蝴蝶、IP/游戏节点等不同场景里的特殊点赞。而且“赞”作为一个日常已经习以为常的线上动作，也或许能从寻常中看见“不寻常”的互联网上的“附近”。这个标题还能自然打开评论区：用户可以接着问“我也点到了”“这个怎么触发”“还有没有别的隐藏赞”。</p>
+    </div>
+
     <div class="script">
-        <h2>正文文案</h2>
-      <p>小红书的赞，最近又忙起来了。我们刷到很多“点赞提醒帖”：有人说双击屏幕有惊喜，有人问怎么触发，也有人专门求截图。</p>
-      <p>一个很小的点赞特效，被大家讲成了一条新线索。世界杯进行时，红心换上球衣；《给阿嬷的情书》里，木棉花在影院之外再次绽放；春天的花与蝶、夏日的水与热，把“季节到了”放进手指落下去的一秒；游戏更新、电影上映这些节点，又像同好之间的小暗号。</p>
-      <p>点赞彩蛋不是随便哪里都能点出来，所以大家才会互相提醒：要带什么话题？在哪个笔记下点？谁有截图？彩蛋被发现以后，又长出新的内容。</p>
-      <p>我们想说，特殊点赞不只是“图标变了”，而是一个小小交互怎么接住大家，又被大家接住。不是所有喜欢都一定要长成一个红心。看球的喜欢、被故事打动的喜欢、春天路过的喜欢、同好相认的喜欢，本来就不太一样。</p>
+        <h2>正文文案 <small>约 550 字</small></h2>
+      <p>小红书的赞，最近又忙起来了。我们刷到好多“点赞提醒帖”：有人说双击屏幕有惊喜，有人问怎么触发，有人专门求截图——</p>
+      <p>“真的有，快去点。” “看看我有没有点赞成功？”本来只是一个很小的点赞特效，突然被大家讲成了一条新线索。</p>
+      <p>世界杯进行时，红心换上了球衣；《给阿嬷的情书》，木棉花的勇气与炽热在影院之外再次绽放；春天的花与蝶，把“季节到了”放进手指落下去的一秒；游戏更新、电影上映这些节点里的特殊赞，像你我之间的会心一笑：原来不止我在期待，也不止我一个人在上头。</p>
+      <p>点赞彩蛋不是随便哪里都能点出来。它可能藏在小红书的各种地方。当然，也因为触发条件不总是被写得很明白，大家才会互相提醒：要带什么话题？在哪个笔记下点？谁有点赞截图？</p>
+      <p>于是，彩蛋被发现以后，又长出新的内容。把它留作素材，把“我点到了”当成一次颇有成就感的参与，甚至会把点赞特效保留下和同好们分享。</p>
+      <p>特殊点赞不只是“图标变了”，或是“这个特效好有意思”，而是一个小小、看似孤零零的交互怎么接住大家，又被大家接住。不是所有喜欢都一定要长成一个“红心”。看球的喜欢、被故事打动的喜欢、春天路过的喜欢、同好相认的喜欢，本来就不太一样。</p>
+      <p>我们希望这样的交互，不只让惊喜做大，而是让它出现得“刚刚好”：在你已经想表达喜欢的那一秒，换一种“惊喜在场”的方式托住独属于你的心情。</p>
     </div>
 
     <div class="flow">
