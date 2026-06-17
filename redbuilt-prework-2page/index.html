@@ -381,10 +381,13 @@ h1 em,h2 em,.accent{color:var(--accent);font-style:normal}
 .ai-note{
   margin-top:5px;
   color:#403833;
-  font-size:12.2px;
-  line-height:1.42;
+  font-size:11px;
+  line-height:1.34;
   text-align:justify;
   text-justify:inter-ideograph;
+}
+.ai-note + .ai-note{
+  margin-top:3px;
 }
 .reply-cards{
   display:grid;
@@ -429,12 +432,12 @@ h1 em,h2 em,.accent{color:var(--accent);font-style:normal}
   display:block;
   width:100%;
   height:auto;
-  max-height:224px;
+  max-height:205px;
   object-fit:contain;
   background:#fff8ea;
 }
 .proof-grid .ai-proof:nth-child(2) img{
-  max-height:224px;
+  max-height:205px;
 }
 .ai-proof figcaption{
   margin-top:6px;
@@ -492,7 +495,7 @@ h1 em,h2 em,.accent{color:var(--accent);font-style:normal}
           <h2>选题：特殊点赞</h2>
         <div class="meta-list">
           <div><b>主标题</b><span>《小红书的赞，最近有点忙》</span></div>
-          <div><b>备选</b><span>《不是所有喜欢，都长成一个红心》<br>《谁点到过？小红书隐藏赞图鉴征集中》</span></div>
+          <div><b>备选标题</b><span>《不是所有喜欢，都长成一个红心》<br>《谁点到过？点赞小巧思 🈶》</span></div>
         </div>
       </div>
       <div class="panel">
@@ -507,8 +510,8 @@ h1 em,h2 em,.accent{color:var(--accent);font-style:normal}
     </div>
 
     <div class="title-reason">
-      <p>选择《小红书的赞，最近有点忙》，是从大家正在刷到的一个小发现切入：怎么这个赞突然变了（变成了世界杯的足球）？谁点到了？还能不能再点一次？“赞，最近有点忙”有一点拟人感，也有一点活人感，不像在讲一个按钮更新，更像「是小红书人啊」和大家聊天的语气。</p>
-      <p>它也不只绑定世界杯一个案例，可以继续承接木棉花、蝴蝶、IP/游戏节点等不同场景里的特殊点赞。而且“赞”作为一个日常已经习以为常的线上动作，也或许能从寻常中看见“不寻常”的互联网上的“附近”。这个标题还能自然打开评论区：用户可以接着问“我也点到了”“这个怎么触发”“还有没有别的隐藏赞”。</p>
+      <p><b>为什么选择这个主标题？</b>《小红书的赞，最近有点忙》可以从大家正在刷到的一个小发现切入：怎么这个赞突然变了（变成了世界杯的足球）？谁点到了？还能不能再点一次？“赞，最近有点忙”有一点拟人感，也有一点活人感，不像在讲一个按钮更新，更像「是小红书人啊」和大家聊天的语气。</p>
+      <p>它也不只绑定世界杯一个案例，可以继续承接木棉花、蝴蝶、IP/游戏节点等不同场景里的特殊点赞。而且“赞”作为一个日常已经习以为常的线上动作，也或许能从寻常中看见“不寻常”的互联网上的“附近”。这个标题能自然打开评论区：用户可以接着问“我也点到了”“这个怎么触发”“还有没有别的隐藏赞”。两个备选标题分别承担不同作用：《不是所有喜欢，都长成一个红心》更偏洞察收束；《谁点到过？点赞小巧思 🈶》更像小红书评论区的开口，语气更轻，适合承担互动功能，引导用户补充自己点到过的隐藏赞。</p>
     </div>
 
     <div class="script">
@@ -574,7 +577,8 @@ h1 em,h2 em,.accent{color:var(--accent);font-style:normal}
 
     <section class="ai-block">
       <h2>AI 使用说明</h2>
-      <p class="ai-note">我用 AI 辅助拆题、发散标题、整理 8 张卡片结构，并把语言从功能说明改得更像小红书聊天。保留了“不是所有喜欢都长成红心”的洞察，删掉了偏说明书的表达。</p>
+      <p class="ai-note">我用 AI 辅助拆题、发散标题、整理图片结构，并把语言文案修改得更有对话感。核心提示词是：写得像产品背后的“人”，要有“活人感” + “杂志风”的设计。</p>
+      <p class="ai-note"><b>原因：</b>保留了“不是所有喜欢都长成一个红心”和“小交互如何被用户接住”的洞察，因为它们能把特殊点赞从功能变化拉回到用户感受。删掉偏功能说明、盘点式的表达和早期较简单幼稚的前端方案，是因为它们会分散内容主线，也不够贴合这篇策划需要的“轻盈”气质和对话感。最终保留更克制的图文结构和轻动效，让阅读路径更清楚，也更适合小红书图文的翻阅体验。</p>
       <div class="proof-grid">
         <figure class="ai-proof">
           <img src="assets/ai-usage-flow.png" alt="AI 使用流程图">
