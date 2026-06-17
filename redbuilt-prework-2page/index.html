@@ -140,9 +140,9 @@ h1 em,h2 em,.accent{color:var(--accent);font-style:normal}
   font-weight:800;
 }
 .cover-page .panel h2{
-  font-family:var(--sans);
+  font-family:var(--serif);
   font-size:22px;
-  font-weight:900;
+  font-weight:800;
 }
 .panel p,.copy{
   margin-top:10px;
@@ -223,7 +223,7 @@ h1 em,h2 em,.accent{color:var(--accent);font-style:normal}
 }
 .cover-page .script{
   margin-top:14px;
-  padding:12px 16px 14px;
+  padding:13px 16px 16px;
 }
 .script h2{
   margin-bottom:10px;
@@ -239,10 +239,10 @@ h1 em,h2 em,.accent{color:var(--accent);font-style:normal}
   letter-spacing:.08em;
 }
 .cover-page .script h2{
-  font-family:var(--sans);
+  font-family:var(--serif);
   margin-bottom:7px;
-  font-size:21px;
-  font-weight:900;
+  font-size:24px;
+  font-weight:800;
 }
 .script p{
   color:#302923;
@@ -253,8 +253,8 @@ h1 em,h2 em,.accent{color:var(--accent);font-style:normal}
   text-justify:inter-ideograph;
 }
 .cover-page .script p{
-  font-size:11.4px;
-  line-height:1.42;
+  font-size:12.4px;
+  line-height:1.48;
 }
 .script p + p{
   margin-top:8px;
@@ -303,13 +303,13 @@ h1 em,h2 em,.accent{color:var(--accent);font-style:normal}
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:0;
-  margin-top:26px;
+  margin-top:22px;
   border-top:1px solid var(--hair);
   border-left:1px solid var(--hair);
 }
 .hook{
-  min-height:132px;
-  padding:15px 18px 14px;
+  min-height:124px;
+  padding:13px 18px 12px;
   border-right:1px solid var(--hair);
   border-bottom:1px solid var(--hair);
 }
@@ -333,8 +333,8 @@ h1 em,h2 em,.accent{color:var(--accent);font-style:normal}
   line-height:1.42;
 }
 .reply-block{
-  margin-top:20px;
-  padding:16px 0 14px;
+  margin-top:16px;
+  padding:14px 0 12px;
   border-top:1px solid var(--hair);
   border-bottom:1px solid var(--hair-soft);
 }
@@ -344,14 +344,33 @@ h1 em,h2 em,.accent{color:var(--accent);font-style:normal}
   font-size:22px;
   line-height:1.1;
 }
+.ai-block{
+  margin-top:14px;
+  padding-top:12px;
+  border-top:1px solid var(--hair);
+}
+.ai-block h2{
+  color:var(--accent);
+  font-family:var(--serif);
+  font-size:22px;
+  line-height:1.1;
+}
+.ai-note{
+  margin-top:6px;
+  color:#403833;
+  font-size:13px;
+  line-height:1.48;
+  text-align:justify;
+  text-justify:inter-ideograph;
+}
 .reply-cards{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:18px;
-  margin-top:12px;
+  margin-top:10px;
 }
 .comment-reply{
-  padding:14px 16px;
+  padding:12px 15px;
   border:1px solid var(--hair-soft);
   background:rgba(255,255,255,.24);
 }
@@ -375,11 +394,11 @@ h1 em,h2 em,.accent{color:var(--accent);font-style:normal}
   display:grid;
   grid-template-columns:1.18fr .82fr;
   gap:18px;
-  margin-top:18px;
+  margin-top:10px;
 }
 .ai-proof{
   margin:0;
-  padding:12px;
+  padding:10px;
   border:1px solid var(--hair-soft);
   background:rgba(255,255,255,.30);
 }
@@ -402,14 +421,6 @@ h1 em,h2 em,.accent{color:var(--accent);font-style:normal}
   font-weight:700;
   letter-spacing:.08em;
   text-transform:uppercase;
-}
-.ai{
-  margin-top:12px;
-  padding-top:10px;
-  border-top:1px solid var(--hair);
-  color:#4d433a;
-  font-size:13px;
-  line-height:1.46;
 }
 .foot{
   position:absolute;
@@ -527,18 +538,20 @@ h1 em,h2 em,.accent{color:var(--accent);font-style:normal}
       </div>
     </section>
 
-    <div class="proof-grid">
-      <figure class="ai-proof">
-        <img src="assets/ai-usage-flow.png" alt="AI 使用流程图">
-        <figcaption>AI 使用流程图 · 从功能点到小红书内容</figcaption>
-      </figure>
-      <figure class="ai-proof">
-        <img src="assets/ai-conversation-shot.png" alt="AI 对话截图">
-        <figcaption>AI 对话截图 · 用于说明提示词与修改过程</figcaption>
-      </figure>
-    </div>
-
-    <p class="ai"><b>AI 使用说明：</b>我用 AI 辅助拆题、发散标题、整理 8 张卡片结构，并把语言从功能说明改得更像小红书聊天。核心提示词：评论接力、产品背后的人、不写功能宣传。保留了“不是所有喜欢都长成红心”的洞察，删掉了偏说明书的表达。</p>
+    <section class="ai-block">
+      <h2>AI 使用说明</h2>
+      <p class="ai-note">我用 AI 辅助拆题、发散标题、整理 8 张卡片结构，并把语言从功能说明改得更像小红书聊天。保留了“不是所有喜欢都长成红心”的洞察，删掉了偏说明书的表达。</p>
+      <div class="proof-grid">
+        <figure class="ai-proof">
+          <img src="assets/ai-usage-flow.png" alt="AI 使用流程图">
+          <figcaption>AI 使用流程图 · 从功能点到小红书内容</figcaption>
+        </figure>
+        <figure class="ai-proof">
+          <img src="assets/ai-conversation-shot.png" alt="AI 对话截图">
+          <figcaption>AI 对话截图 · 用于说明提示词与修改过程</figcaption>
+        </figure>
+      </div>
+    </section>
 
     <footer class="foot"><span></span><span>Page 02</span></footer>
   </section>
