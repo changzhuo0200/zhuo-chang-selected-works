@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>REDebuilt Prework · OC 内容运营方向</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0a0a0b;
+  --paper:#fff8ea;
+  --paper-tint:#f0e4cf;
+  --muted:#6f655b;
+  --hair:rgba(10,10,11,.86);
+  --hair-soft:rgba(10,10,11,.16);
+  --accent:#d86f45;
+  --accent-soft:#f6d7c4;
+  --gold:#e5a63f;
+  --serif:"Noto Serif SC","Playfair Display",Georgia,serif;
+  --serif-en:"Playfair Display",Georgia,serif;
+  --sans:"Noto Sans SC",-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  min-height:100vh;
+  display:grid;
+  gap:32px;
+  justify-content:center;
+  padding:32px;
+  color:var(--ink);
+  background:linear-gradient(135deg,#e7d8c3,#f6ebda);
+  font-family:var(--sans);
+}
+.page{
+  position:relative;
+  width:900px;
+  height:1200px;
+  overflow:hidden;
+  padding:52px 62px 48px;
+  background:
+    radial-gradient(circle at 88% 12%,rgba(229,166,63,.20),transparent 26%),
+    linear-gradient(145deg,#fffdf6,var(--paper));
+  box-shadow:0 30px 80px rgba(67,43,22,.18);
+}
+.page::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.15;
+  mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.86' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .055 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.page>*{position:relative;z-index:2}
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  padding-bottom:15px;
+  border-bottom:1px solid var(--hair);
+}
+.masthead{
+  font-size:14px;
+  font-weight:900;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+}
+.folio{
+  font-family:var(--serif-en);
+  font-size:21px;
+  font-style:italic;
+}
+.folio b{font-style:normal;font-weight:600}
+.eyebrow{
+  margin:34px 0 16px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  color:var(--muted);
+  font-size:15px;
+  font-weight:900;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+}
+.eyebrow::before{content:"";width:56px;height:1px;background:var(--hair)}
+h1,h2,p{margin:0}
+h1{
+  max-width:760px;
+  font-family:var(--serif);
+  font-size:76px;
+  line-height:1.04;
+  letter-spacing:-2.2px;
+  font-weight:900;
+}
+h1 em,h2 em,.accent{color:var(--accent);font-style:normal}
+.sub{
+  margin-top:18px;
+  max-width:720px;
+  font-family:var(--sans);
+  color:#38322d;
+  font-size:18px;
+  line-height:1.62;
+  letter-spacing:0;
+  text-align:justify;
+  text-justify:inter-ideograph;
+}
+.grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:32px;
+  margin-top:30px;
+}
+.panel{
+  border-top:1px solid var(--hair);
+  padding-top:18px;
+}
+.label{
+  margin-bottom:14px;
+  color:var(--accent);
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.panel h2{
+  font-family:var(--serif);
+  font-size:24px;
+  line-height:1.22;
+  font-weight:800;
+}
+.panel p,.copy{
+  margin-top:10px;
+  color:#443b34;
+  font-size:15px;
+  line-height:1.62;
+  letter-spacing:0;
+  text-align:justify;
+  text-justify:inter-ideograph;
+}
+.meta-list{
+  display:grid;
+  gap:8px;
+  margin-top:14px;
+  padding-top:14px;
+  border-top:1px solid var(--hair-soft);
+}
+.meta-list div{
+  display:grid;
+  grid-template-columns:74px 1fr;
+  gap:14px;
+  color:#2a2520;
+  font-size:13px;
+  line-height:1.62;
+  letter-spacing:0;
+}
+.meta-list span{
+  text-align:justify;
+  text-justify:inter-ideograph;
+}
+.meta-list b{
+  color:var(--muted);
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+.script{
+  margin-top:24px;
+  padding:18px 22px 20px;
+  border:1px solid var(--hair);
+  background:rgba(255,255,255,.28);
+}
+.script h2{
+  margin-bottom:10px;
+  font-family:var(--serif);
+  font-size:27px;
+}
+.script p{
+  color:#302923;
+  font-size:14px;
+  line-height:1.62;
+  letter-spacing:0;
+  text-align:justify;
+  text-justify:inter-ideograph;
+}
+.script p + p{
+  margin-top:8px;
+}
+.flow{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:0;
+  margin-top:20px;
+  border-top:1px solid var(--hair);
+  border-left:1px solid var(--hair);
+}
+.flow span{
+  min-height:48px;
+  display:grid;
+  place-items:center;
+  padding:8px;
+  border-right:1px solid var(--hair);
+  border-bottom:1px solid var(--hair);
+  font-family:var(--serif);
+  font-size:16px;
+  font-weight:700;
+  text-align:center;
+}
+.two-col{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  margin-top:26px;
+  border-top:1px solid var(--hair);
+  border-left:1px solid var(--hair);
+}
+.hook{
+  min-height:132px;
+  padding:15px 18px 14px;
+  border-right:1px solid var(--hair);
+  border-bottom:1px solid var(--hair);
+}
+.hook .num{
+  color:var(--accent);
+  font-family:var(--serif-en);
+  font-style:italic;
+  font-size:28px;
+  line-height:.9;
+}
+.hook h2{
+  margin-top:6px;
+  font-family:var(--serif);
+  font-size:24px;
+  line-height:1.12;
+}
+.hook p{
+  margin-top:8px;
+  color:#443b34;
+  font-size:14px;
+  line-height:1.42;
+}
+.reply-block{
+  margin-top:20px;
+  padding:16px 0 14px;
+  border-top:1px solid var(--hair);
+  border-bottom:1px solid var(--hair-soft);
+}
+.reply-block h2{
+  color:var(--accent);
+  font-family:var(--serif);
+  font-size:22px;
+  line-height:1.1;
+}
+.reply-cards{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin-top:12px;
+}
+.comment-reply{
+  padding:14px 16px;
+  border:1px solid var(--hair-soft);
+  background:rgba(255,255,255,.24);
+}
+.comment-reply b{
+  display:block;
+  color:#1f1b17;
+  font-size:14px;
+  line-height:1.35;
+}
+.comment-reply p{
+  margin-top:8px;
+  color:#403833;
+  font-size:12.6px;
+  line-height:1.5;
+  text-align:justify;
+  text-justify:inter-ideograph;
+}
+.ok{color:#1d6b4f;font-weight:900}
+.warn{color:#b15a32;font-weight:900}
+.proof-grid{
+  display:grid;
+  grid-template-columns:1.18fr .82fr;
+  gap:18px;
+  margin-top:18px;
+}
+.ai-proof{
+  margin:0;
+  padding:12px;
+  border:1px solid var(--hair-soft);
+  background:rgba(255,255,255,.30);
+}
+.ai-proof img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:300px;
+  object-fit:contain;
+  background:#fff8ea;
+}
+.proof-grid .ai-proof:nth-child(2) img{
+  max-height:300px;
+}
+.ai-proof figcaption{
+  margin-top:8px;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.35;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.ai{
+  margin-top:12px;
+  padding-top:10px;
+  border-top:1px solid var(--hair);
+  color:#4d433a;
+  font-size:13px;
+  line-height:1.46;
+}
+.foot{
+  position:absolute;
+  left:62px;
+  right:62px;
+  bottom:30px;
+  display:flex;
+  justify-content:space-between;
+  padding-top:12px;
+  border-top:1px solid var(--hair);
+  color:var(--muted);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+@media print{
+  body{padding:0;background:white;gap:0}
+  .page{box-shadow:none;break-after:page}
+}
+@media (max-width:960px){
+  body{padding:18px}
+  .page{width:min(100vw - 36px,900px);height:auto;min-height:calc((100vw - 36px) * 1.333);padding:42px 34px 70px}
+  h1{font-size:clamp(52px,11vw,96px)}
+  .grid,.two-col{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr}
+  .reply-cards,.proof-grid{grid-template-columns:1fr}
+  .foot{left:34px;right:34px}
+}
+</style>
+</head>
+<body>
+  <section class="page">
+    <header class="top">
+      <div class="masthead">REDebuilt OC · PREWORK</div>
+      <div class="folio"><b>01</b> / 02</div>
+    </header>
+
+    <p class="eyebrow">一个产品 / 技术的背后</p>
+    <h1>小红书的赞，<br>最近有点<em>忙</em>。</h1>
+    <p class="sub">让不同场景里的“喜欢”有不同形状。不是讲一个按钮更新，而是讲一个小交互如何被用户发现、转述，又长成新的社区内容。</p>
+
+    <div class="grid">
+      <div class="panel">
+        <p class="label">Topic & Title</p>
+          <h2>选题：特殊点赞</h2>
+        <div class="meta-list">
+          <div><b>主标题</b><span>《小红书的赞，最近有点忙》</span></div>
+          <div><b>备选</b><span>《不是所有喜欢，都长成一个红心》<br>《谁点到过？小红书隐藏赞图鉴征集中》</span></div>
+          <div><b>更小红书</b><span>标题有拟人感和聊天感，能自然引出“谁点到了”“怎么触发”“还有没有别的隐藏赞”。</span></div>
+        </div>
+      </div>
+      <div class="panel">
+        <p class="label">Format</p>
+        <h2>形式：8 张卡片式图文</h2>
+        <p>它更像一次“发现—考古—串联—洞察—共创”的滑动式阅读。每张图只讲一个点，适合用户在评论区补图、补案例、许愿新的点赞形状。</p>
+      </div>
+    </div>
+
+    <div class="script">
+        <h2>正文文案</h2>
+      <p>小红书的赞，最近又忙起来了。我们刷到很多“点赞提醒帖”：有人说双击屏幕有惊喜，有人问怎么触发，也有人专门求截图。</p>
+      <p>一个很小的点赞特效，被大家讲成了一条新线索。世界杯进行时，红心换上球衣；《给阿嬷的情书》里，木棉花在影院之外再次绽放；春天的花与蝶、夏日的水与热，把“季节到了”放进手指落下去的一秒；游戏更新、电影上映这些节点，又像同好之间的小暗号。</p>
+      <p>点赞彩蛋不是随便哪里都能点出来，所以大家才会互相提醒：要带什么话题？在哪个笔记下点？谁有截图？彩蛋被发现以后，又长出新的内容。</p>
+      <p>我们想说，特殊点赞不只是“图标变了”，而是一个小小交互怎么接住大家，又被大家接住。不是所有喜欢都一定要长成一个红心。看球的喜欢、被故事打动的喜欢、春天路过的喜欢、同好相认的喜欢，本来就不太一样。</p>
+    </div>
+
+    <div class="flow">
+      <span>发现</span><span>考古</span><span>串联</span><span>洞察</span><span>共创</span>
+    </div>
+
+    <footer class="foot"><span>OC 内容运营方向</span><span>Page 01</span></footer>
+  </section>
+
+  <section class="page">
+    <header class="top">
+      <div class="masthead">REDebuilt OC · COMMUNITY DESIGN</div>
+      <div class="folio"><b>02</b> / 02</div>
+    </header>
+
+    <p class="eyebrow">运营互动</p>
+    <h1>评论区，<br>继续长出<em>内容</em>。</h1>
+
+    <div class="two-col">
+      <div class="hook">
+        <div class="num">i.</div>
+        <h2>考古型</h2>
+        <p>你们还点到过哪些隐藏赞？欢迎在评论区分享“惊喜赞”，一起补充一份「小红书隐藏赞图鉴」。</p>
+      </div>
+      <div class="hook">
+        <div class="num">ii.</div>
+        <h2>共创型</h2>
+        <p>如果可以开发一种新的点赞功能，你希望它出现在哪个场景？毕业季、演唱会、宠物日记，或者你的版本。</p>
+      </div>
+    </div>
+
+    <section class="reply-block">
+      <h2>负面留言回复</h2>
+      <div class="reply-cards">
+        <article class="comment-reply">
+          <b>又在自我感动</b>
+          <p>“点赞”确实不是多“大”的功能。不过，有些小交互会让人从习惯性的机械点赞里停半秒。要是你觉得某些特效有点打扰，也欢迎吐槽；要是你点到过更好玩有意思的，也欢迎在评论区分享～</p>
+        </article>
+        <article class="comment-reply">
+          <b>这不就是活动营销吗？</b>
+          <p>确实，这种特殊点赞常常和活动、IP、话题节点有关。我们这次想聊的不是“活动做得多热闹”，而是一个小彩蛋被大家发现怎么触发以后，怎么又变成了社区里的新内容。也欢迎补充你见过的案例～但是我们现在也在思考如何让这样的“点赞”更有“新意”，更加链接小红书上的彼此。</p>
+        </article>
+      </div>
+    </section>
+
+    <div class="proof-grid">
+      <figure class="ai-proof">
+        <img src="assets/ai-usage-flow.png" alt="AI 使用流程图">
+        <figcaption>AI 使用流程图 · 从功能点到小红书内容</figcaption>
+      </figure>
+      <figure class="ai-proof">
+        <img src="assets/ai-conversation-shot.png" alt="AI 对话截图">
+        <figcaption>AI 对话截图 · 用于说明提示词与修改过程</figcaption>
+      </figure>
+    </div>
+
+    <p class="ai"><b>AI 使用说明：</b>我用 AI 辅助拆题、发散标题、整理 8 张卡片结构，并把语言从功能说明改得更像小红书聊天。核心提示词：评论接力、产品背后的人、不写功能宣传。保留了“不是所有喜欢都长成红心”的洞察，删掉了偏说明书的表达。</p>
+
+    <footer class="foot"><span></span><span>Page 02</span></footer>
+  </section>
+</body>
+</html>
